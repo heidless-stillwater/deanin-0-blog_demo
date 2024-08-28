@@ -11,3 +11,5 @@
 10.times do |x|
   Post.create(title: "Titles #{x}", body: "Body #{x} text here...")
 end
+
+
