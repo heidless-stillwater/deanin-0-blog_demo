@@ -3,15 +3,18 @@
 <div class="container">
   <% content_for :title, "Posts" %>
   <h1>Posts</h1>
+  <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
   <div id="posts">
     <% @posts.each do |post| %>
       <%= render post %>
       <p>
-        <%= link_to "Show this post", post %>
+        <p></p>
+        <%= link_to "Show this post", post, class: "btn btn-secondary" %>
       </p>
     <% end %>
   </div>
 
-  <%= link_to "New post", new_post_path %>
+  <p><br></p>
+
 </div>
 
