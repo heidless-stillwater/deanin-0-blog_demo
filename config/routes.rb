@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get "users/profile"
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  get 'u/:id', to: 'users#profile', as: 'user'
+
   resources :posts
   get 'about', to: 'pages#about'
   get 'posts', to: 'posts#index'
@@ -16,4 +24,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
+
 end
